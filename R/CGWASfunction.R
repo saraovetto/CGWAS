@@ -155,6 +155,7 @@ step3 <- function(cgwasenv) {
 
   threadNCur <- min(cgwasenv$.PARAL_NUM, nrow(pairma))
   cl <- makeCluster(threadNCur)
+  registerDoParallel(cl)
   # globalVariables(c('i'))
   i <- 1 # assign parallel control variants
 
